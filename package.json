@@ -8,14 +8,10 @@
     "type": "git",
     "url": "git+https://github.com/matthijsderidder/allergens.git"
   },
-  "homepage": "https://github.com/matthijsderidder/allergens",
-  "style": "dist/css/allergens.css",
-  "jsdelivr": "dist/css/allergens.min.css",
-  "unpkg": "dist/css/allergens.min.css",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "bugs": {
+    "url": "https://github.com/matthijsderidder/allergens/issues"
+  },
+  "homepage": "https://github.com/matthijsderidder/allergens#readme",
   "keywords": [
     "css",
     "scss",
@@ -24,5 +20,30 @@
     "webfont",
     "eu-1169-2011",
     "food-safety"
-  ]
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./dist/css/allergens.css",
+  "style": "./dist/css/allergens.css",
+  "sass": "./src/scss/allergens.scss",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "style": "./dist/css/allergens.css",
+      "sass": "./src/scss/allergens.scss",
+      "default": "./dist/css/allergens.css"
+    },
+    "./css": "./dist/css/allergens.css",
+    "./css/min": "./dist/css/allergens.min.css",
+    "./scss": "./src/scss/allergens.scss",
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "jsdelivr": "dist/css/allergens.min.css",
+  "unpkg": "dist/css/allergens.min.css"
 }
