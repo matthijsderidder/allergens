@@ -1,0 +1,39 @@
+@use "sass:map";
+@use "allergen-variables" as *;
+
+$allergen-colors: (
+  "gluten": #bf9e57,
+  "crustaceans": #e53d6b,
+  "eggs": #f79a37,
+  "fish": #2887c7,
+  "peanuts": #cd6e43,
+  "soybeans": #7aac47,
+  "milk": #73c6ee,
+  "nuts": #855433,
+  "celery": #28a069,
+  "mustard": #d99539,
+  "sesame": #dcb579,
+  "sulphites": #8767a6,
+  "lupin": #c57d99,
+  "molluscs": #a89a90
+) !default;
+
+$emit-color-classes: true !default;
+
+@each $name in $allergens {
+  @if not map.has-key($allergen-colors, $name) {
+    @error "Missing color for `#{$name}`.";
+  }
+}
+
+@function allergen-color($name) {
+  @return map.get($allergen-colors, $name);
+}
+
+@if $emit-color-classes {
+  @each $name in $allergens {
+    .ac-#{$name} {
+      color: allergen-color($name);
+    }
+  }
+}

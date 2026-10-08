@@ -1,0 +1,294 @@
+@font-face {
+  font-family: "allergen-icons-plain";
+  src: url("../fonts/allergen-icons-plain.woff2") format("woff2"), url("../fonts/allergen-icons-plain.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "allergen-icons-circle";
+  src: url("../fonts/allergen-icons-circle.woff2") format("woff2"), url("../fonts/allergen-icons-circle.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=ai-]::before,
+[class*=" ai-"]::before {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ai-gluten::before, .ai-crustaceans::before, .ai-eggs::before, .ai-fish::before, .ai-peanuts::before, .ai-soybeans::before, .ai-milk::before, .ai-nuts::before, .ai-celery::before, .ai-mustard::before, .ai-sesame::before, .ai-sulphites::before, .ai-lupin::before, .ai-molluscs::before {
+  font-family: "allergen-icons-plain";
+}
+
+.ai-gluten-circle::before, .ai-crustaceans-circle::before, .ai-eggs-circle::before, .ai-fish-circle::before, .ai-peanuts-circle::before, .ai-soybeans-circle::before, .ai-milk-circle::before, .ai-nuts-circle::before, .ai-celery-circle::before, .ai-mustard-circle::before, .ai-sesame-circle::before, .ai-sulphites-circle::before, .ai-lupin-circle::before, .ai-molluscs-circle::before {
+  font-family: "allergen-icons-circle";
+}
+
+.ai-gluten::before,
+.ai-gluten-circle::before {
+  content: "A";
+}
+
+.ai-crustaceans::before,
+.ai-crustaceans-circle::before {
+  content: "B";
+}
+
+.ai-eggs::before,
+.ai-eggs-circle::before {
+  content: "C";
+}
+
+.ai-fish::before,
+.ai-fish-circle::before {
+  content: "D";
+}
+
+.ai-peanuts::before,
+.ai-peanuts-circle::before {
+  content: "E";
+}
+
+.ai-soybeans::before,
+.ai-soybeans-circle::before {
+  content: "F";
+}
+
+.ai-milk::before,
+.ai-milk-circle::before {
+  content: "G";
+}
+
+.ai-nuts::before,
+.ai-nuts-circle::before {
+  content: "H";
+}
+
+.ai-celery::before,
+.ai-celery-circle::before {
+  content: "I";
+}
+
+.ai-mustard::before,
+.ai-mustard-circle::before {
+  content: "J";
+}
+
+.ai-sesame::before,
+.ai-sesame-circle::before {
+  content: "K";
+}
+
+.ai-sulphites::before,
+.ai-sulphites-circle::before {
+  content: "L";
+}
+
+.ai-lupin::before,
+.ai-lupin-circle::before {
+  content: "M";
+}
+
+.ai-molluscs::before,
+.ai-molluscs-circle::before {
+  content: "N";
+}
+
+.ac-gluten {
+  color: #bf9e57;
+}
+
+.ac-crustaceans {
+  color: #e53d6b;
+}
+
+.ac-eggs {
+  color: #f79a37;
+}
+
+.ac-fish {
+  color: #2887c7;
+}
+
+.ac-peanuts {
+  color: #cd6e43;
+}
+
+.ac-soybeans {
+  color: #7aac47;
+}
+
+.ac-milk {
+  color: #73c6ee;
+}
+
+.ac-nuts {
+  color: #855433;
+}
+
+.ac-celery {
+  color: #28a069;
+}
+
+.ac-mustard {
+  color: #d99539;
+}
+
+.ac-sesame {
+  color: #dcb579;
+}
+
+.ac-sulphites {
+  color: #8767a6;
+}
+
+.ac-lupin {
+  color: #c57d99;
+}
+
+.ac-molluscs {
+  color: #a89a90;
+}
+
+.form-check-input[class*=allergen-] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-check-input[class*=allergen-] + .form-check-label {
+  cursor: pointer;
+}
+
+.form-check-input[class*=allergen-] + .form-check-label::before {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-family: "allergen-icons-circle";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.form-check-input[class*=allergen-]:focus-visible + .form-check-label {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.form-check-input.allergen-gluten + .form-check-label::before {
+  content: "A";
+}
+
+.form-check-input.allergen-gluten:checked + .form-check-label::before {
+  color: #bf9e57;
+}
+
+.form-check-input.allergen-crustaceans + .form-check-label::before {
+  content: "B";
+}
+
+.form-check-input.allergen-crustaceans:checked + .form-check-label::before {
+  color: #e53d6b;
+}
+
+.form-check-input.allergen-eggs + .form-check-label::before {
+  content: "C";
+}
+
+.form-check-input.allergen-eggs:checked + .form-check-label::before {
+  color: #f79a37;
+}
+
+.form-check-input.allergen-fish + .form-check-label::before {
+  content: "D";
+}
+
+.form-check-input.allergen-fish:checked + .form-check-label::before {
+  color: #2887c7;
+}
+
+.form-check-input.allergen-peanuts + .form-check-label::before {
+  content: "E";
+}
+
+.form-check-input.allergen-peanuts:checked + .form-check-label::before {
+  color: #cd6e43;
+}
+
+.form-check-input.allergen-soybeans + .form-check-label::before {
+  content: "F";
+}
+
+.form-check-input.allergen-soybeans:checked + .form-check-label::before {
+  color: #7aac47;
+}
+
+.form-check-input.allergen-milk + .form-check-label::before {
+  content: "G";
+}
+
+.form-check-input.allergen-milk:checked + .form-check-label::before {
+  color: #73c6ee;
+}
+
+.form-check-input.allergen-nuts + .form-check-label::before {
+  content: "H";
+}
+
+.form-check-input.allergen-nuts:checked + .form-check-label::before {
+  color: #855433;
+}
+
+.form-check-input.allergen-celery + .form-check-label::before {
+  content: "I";
+}
+
+.form-check-input.allergen-celery:checked + .form-check-label::before {
+  color: #28a069;
+}
+
+.form-check-input.allergen-mustard + .form-check-label::before {
+  content: "J";
+}
+
+.form-check-input.allergen-mustard:checked + .form-check-label::before {
+  color: #d99539;
+}
+
+.form-check-input.allergen-sesame + .form-check-label::before {
+  content: "K";
+}
+
+.form-check-input.allergen-sesame:checked + .form-check-label::before {
+  color: #dcb579;
+}
+
+.form-check-input.allergen-sulphites + .form-check-label::before {
+  content: "L";
+}
+
+.form-check-input.allergen-sulphites:checked + .form-check-label::before {
+  color: #8767a6;
+}
+
+.form-check-input.allergen-lupin + .form-check-label::before {
+  content: "M";
+}
+
+.form-check-input.allergen-lupin:checked + .form-check-label::before {
+  color: #c57d99;
+}
+
+.form-check-input.allergen-molluscs + .form-check-label::before {
+  content: "N";
+}
+
+.form-check-input.allergen-molluscs:checked + .form-check-label::before {
+  color: #a89a90;
+}

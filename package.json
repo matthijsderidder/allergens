@@ -1,0 +1,28 @@
+{
+  "name": "allergens",
+  "version": "1.0.0",
+  "description": "CSS library with 14 icons for the allergens in Annex II of Regulation (EU) No 1169/2011.",
+  "author": "M. de Ridder",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthijsderidder/allergens.git"
+  },
+  "homepage": "https://github.com/matthijsderidder/allergens",
+  "style": "dist/css/allergens.css",
+  "jsdelivr": "dist/css/allergens.min.css",
+  "unpkg": "dist/css/allergens.min.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "css",
+    "scss",
+    "allergens",
+    "icons",
+    "webfont",
+    "eu-1169-2011",
+    "food-safety"
+  ]
+}

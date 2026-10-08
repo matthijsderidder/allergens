@@ -1,0 +1,38 @@
+@use "allergen-variables" as *;
+@use "allergen-colors" as colors;
+
+$allergen-check: ".form-check-input[class*='allergen-']";
+
+#{$allergen-check} {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#{$allergen-check} + .form-check-label {
+  cursor: pointer;
+}
+
+#{$allergen-check} + .form-check-label::before {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-family: "allergen-icons-circle";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+}
+
+#{$allergen-check}:focus-visible + .form-check-label {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@each $name in $allergens {
+  .form-check-input.allergen-#{$name} + .form-check-label::before {
+    content: allergen-glyph($name);
+  }
+
+  .form-check-input.allergen-#{$name}:checked + .form-check-label::before {
+    color: colors.allergen-color($name);
+  }
+}

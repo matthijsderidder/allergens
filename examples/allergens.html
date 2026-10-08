@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Allergens</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../dist/css/allergens.min.css">
+</head>
+<body>
+  <div class="container p-4">
+    
+    <div class="row">
+      <div class="col">
+        <h1>Allergens</h1>
+      </div>
+      <div class="col-auto text-end">
+        <strong>EN</strong>
+        <span class="text-body-secondary">·</span>
+        <a href="allergens.nl.html" class="link-body-emphasis">NL</a>
+      </div>
+    </div>
+    
+    <br />
+
+    <div class="row row-cols-2 g-4">
+      <div class="col">
+        
+        <div class="card">
+          <h5 class="card-header">Black</h5>
+          <div class="card-body p-0">
+            <div class="row row-cols-2 g-0">
+              <div class="col">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><i class="ai-gluten-circle me-2"></i>Cereals containing gluten</li>
+                  <li class="list-group-item"><i class="ai-crustaceans-circle me-2"></i>Crustaceans</li>
+                  <li class="list-group-item"><i class="ai-eggs-circle me-2"></i>Eggs</li>
+                  <li class="list-group-item"><i class="ai-fish-circle me-2"></i>Fish</li>
+                  <li class="list-group-item"><i class="ai-peanuts-circle me-2"></i>Peanuts</li>
+                  <li class="list-group-item"><i class="ai-soybeans-circle me-2"></i>Soybeans</li>
+                  <li class="list-group-item"><i class="ai-milk-circle me-2"></i>Milk</li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><i class="ai-nuts-circle me-2"></i>Nuts</li>
+                  <li class="list-group-item"><i class="ai-celery-circle me-2"></i>Celery</li>
+                  <li class="list-group-item"><i class="ai-mustard-circle me-2"></i>Mustard</li>
+                  <li class="list-group-item"><i class="ai-sesame-circle me-2"></i>Sesame seeds</li>
+                  <li class="list-group-item"><i class="ai-sulphites-circle me-2"></i>Sulphur dioxide and sulphites</li>
+                  <li class="list-group-item"><i class="ai-lupin-circle me-2"></i>Lupin</li>
+                  <li class="list-group-item"><i class="ai-molluscs-circle me-2"></i>Molluscs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col">
+
+        <div class="card">
+          <h5 class="card-header">Coloured</h5>
+          <div class="card-body p-0">
+            <div class="row row-cols-2 g-0">
+              <div class="col">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><i class="ai-gluten-circle ac-gluten me-2"></i>Cereals containing gluten</li>
+                  <li class="list-group-item"><i class="ai-crustaceans-circle ac-crustaceans me-2"></i>Crustaceans</li>
+                  <li class="list-group-item"><i class="ai-eggs-circle ac-eggs me-2"></i>Eggs</li>
+                  <li class="list-group-item"><i class="ai-fish-circle ac-fish me-2"></i>Fish</li>
+                  <li class="list-group-item"><i class="ai-peanuts-circle ac-peanuts me-2"></i>Peanuts</li>
+                  <li class="list-group-item"><i class="ai-soybeans-circle ac-soybeans me-2"></i>Soybeans</li>
+                  <li class="list-group-item"><i class="ai-milk-circle ac-milk me-2"></i>Milk</li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><i class="ai-nuts-circle ac-nuts me-2"></i>Nuts</li>
+                  <li class="list-group-item"><i class="ai-celery-circle ac-celery me-2"></i>Celery</li>
+                  <li class="list-group-item"><i class="ai-mustard-circle ac-mustard me-2"></i>Mustard</li>
+                  <li class="list-group-item"><i class="ai-sesame-circle ac-sesame me-2"></i>Sesame seeds</li>
+                  <li class="list-group-item"><i class="ai-sulphites-circle ac-sulphites me-2"></i>Sulphur dioxide and sulphites</li>
+                  <li class="list-group-item"><i class="ai-lupin-circle ac-lupin me-2"></i>Lupin</li>
+                  <li class="list-group-item"><i class="ai-molluscs-circle ac-molluscs me-2"></i>Molluscs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+    <br />
+    
+    <div class="accordion" id="allergens-accordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-gluten" aria-expanded="false" aria-controls="allergen-panel-gluten">
+            <i class="ai-gluten-circle ac-gluten me-2"></i>Cereals containing gluten
+          </button>
+        </h2>
+        <div id="allergen-panel-gluten" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-gluten-circle ac-gluten d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Cereals containing gluten, namely: wheat (such as spelt and khorasan wheat), rye, barley, oats or their hybridised strains, and products thereof, except:
+            <ul>
+            <li>a) wheat based glucose syrups including dextrose;</li>
+            <li>b) wheat based maltodextrins;</li>
+            <li>c) glucose syrups based on barley;</li>
+            <li>d) cereals used for making alcoholic distillates including ethyl alcohol of agricultural origin.</li>
+            </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-crustaceans" aria-expanded="false" aria-controls="allergen-panel-crustaceans">
+            <i class="ai-crustaceans-circle ac-crustaceans me-2"></i>Crustaceans
+          </button>
+        </h2>
+        <div id="allergen-panel-crustaceans" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-crustaceans-circle ac-crustaceans d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Crustaceans and products thereof.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-eggs" aria-expanded="false" aria-controls="allergen-panel-eggs">
+            <i class="ai-eggs-circle ac-eggs me-2"></i>Eggs
+          </button>
+        </h2>
+        <div id="allergen-panel-eggs" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-eggs-circle ac-eggs d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Eggs and products thereof.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-fish" aria-expanded="false" aria-controls="allergen-panel-fish">
+            <i class="ai-fish-circle ac-fish me-2"></i>Fish
+          </button>
+        </h2>
+        <div id="allergen-panel-fish" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-fish-circle ac-fish d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Fish and products thereof, except:
+            <ul>
+            <li>a) fish gelatine used as carrier for vitamin or carotenoid preparations;</li>
+            <li>b) fish gelatine or Isinglass used as fining agent in beer and wine.</li>
+            </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-peanuts" aria-expanded="false" aria-controls="allergen-panel-peanuts">
+            <i class="ai-peanuts-circle ac-peanuts me-2"></i>Peanuts
+          </button>
+        </h2>
+        <div id="allergen-panel-peanuts" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-peanuts-circle ac-peanuts d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Peanuts and products thereof.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-soybeans" aria-expanded="false" aria-controls="allergen-panel-soybeans">
+            <i class="ai-soybeans-circle ac-soybeans me-2"></i>Soybeans
+          </button>
+        </h2>
+        <div id="allergen-panel-soybeans" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-soybeans-circle ac-soybeans d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Soybeans and products thereof, except:
+            <ul>
+            <li>a) fully refined soybean oil and fat;</li>
+            <li>b) natural mixed tocopherols (E306), natural D-alpha tocopherol, natural D-alpha tocopherol acetate, and natural D-alpha tocopherol succinate from soybean sources;</li>
+            <li>c) vegetable oils derived phytosterols and phytosterol esters from soybean sources;</li>
+            <li>d) plant stanol ester produced from vegetable oil sterols from soybean sources.</li>
+            </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-milk" aria-expanded="false" aria-controls="allergen-panel-milk">
+            <i class="ai-milk-circle ac-milk me-2"></i>Milk (including lactose)
+          </button>
+        </h2>
+        <div id="allergen-panel-milk" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-milk-circle ac-milk d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Milk and products thereof (including lactose), except:
+            <ul>
+            <li>a) whey used for making alcoholic distillates including ethyl alcohol of agricultural origin;</li>
+            <li>b) lactitol.</li>
+            </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-nuts" aria-expanded="false" aria-controls="allergen-panel-nuts">
+            <i class="ai-nuts-circle ac-nuts me-2"></i>Nuts
+          </button>
+        </h2>
+        <div id="allergen-panel-nuts" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-nuts-circle ac-nuts d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Nuts, namely: almonds (<em>Amygdalus communis</em> L.), hazelnuts (<em>Corylus avellana</em>), walnuts (<em>Juglans regia</em>), cashews (<em>Anacardium occidentale</em>), pecan nuts (<em>Carya illinoinensis</em> (Wangenh.) K. Koch), Brazil nuts (<em>Bertholletia excelsa</em>), pistachio nuts (<em>Pistacia vera</em>), macadamia or Queensland nuts (<em>Macadamia ternifolia</em>), and products thereof, except for nuts used for making alcoholic distillates including ethyl alcohol of agricultural origin.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-celery" aria-expanded="false" aria-controls="allergen-panel-celery">
+            <i class="ai-celery-circle ac-celery me-2"></i>Celery
+          </button>
+        </h2>
+        <div id="allergen-panel-celery" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-celery-circle ac-celery d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Celery and products thereof.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-mustard" aria-expanded="false" aria-controls="allergen-panel-mustard">
+            <i class="ai-mustard-circle ac-mustard me-2"></i>Mustard
+          </button>
+        </h2>
+        <div id="allergen-panel-mustard" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-mustard-circle ac-mustard d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Mustard and products thereof, except:
+            <ul>
+            <li>behenic acid with a minimum of 85% of purity and obtained after two distillation steps used in the manufacturing of the emulsifiers E 470a, E 471 and E 477.</li>
+            </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-sesame" aria-expanded="false" aria-controls="allergen-panel-sesame">
+            <i class="ai-sesame-circle ac-sesame me-2"></i>Sesame seeds
+          </button>
+        </h2>
+        <div id="allergen-panel-sesame" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-sesame-circle ac-sesame d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Sesame seeds and products thereof.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-sulphites" aria-expanded="false" aria-controls="allergen-panel-sulphites">
+            <i class="ai-sulphites-circle ac-sulphites me-2"></i>Sulphur dioxide and sulphites
+          </button>
+        </h2>
+        <div id="allergen-panel-sulphites" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-sulphites-circle ac-sulphites d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Sulphur dioxide and sulphites at concentrations of more than 10 mg/kg or 10 mg/litre in terms of the total SO<sub>2</sub> which are to be calculated for products as proposed ready for consumption or as reconstituted according to the instructions of the manufacturers.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-lupin" aria-expanded="false" aria-controls="allergen-panel-lupin">
+            <i class="ai-lupin-circle ac-lupin me-2"></i>Lupin
+          </button>
+        </h2>
+        <div id="allergen-panel-lupin" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-lupin-circle ac-lupin d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Lupin and products thereof.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allergen-panel-molluscs" aria-expanded="false" aria-controls="allergen-panel-molluscs">
+            <i class="ai-molluscs-circle ac-molluscs me-2"></i>Molluscs
+          </button>
+        </h2>
+        <div id="allergen-panel-molluscs" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-1" style="container-type: inline-size">
+                <i class="ai-molluscs-circle ac-molluscs d-block w-100" style="font-size: 100cqi; line-height: 1" aria-hidden="true"></i>
+              </div>
+              <div class="col-11">
+            Molluscs and products thereof.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha256-ew8UiV1pJH/YjpOEBInP1HxVvT/SfrCmwSoUzF9JIgc=" crossorigin="anonymous"></script>
+</body>
+</html>

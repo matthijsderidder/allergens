@@ -1,0 +1,30 @@
+@use "sass:list";
+@use "sass:string";
+
+// Annex II order. Glyphs A–N follow this list.
+$allergens: (
+  "gluten",
+  "crustaceans",
+  "eggs",
+  "fish",
+  "peanuts",
+  "soybeans",
+  "milk",
+  "nuts",
+  "celery",
+  "mustard",
+  "sesame",
+  "sulphites",
+  "lupin",
+  "molluscs"
+) !default;
+
+@function allergen-glyph($name) {
+  $index: list.index($allergens, $name);
+
+  @if not $index {
+    @error "Unknown allergen `#{$name}`.";
+  }
+
+  @return string.slice("ABCDEFGHIJKLMN", $index, $index);
+}

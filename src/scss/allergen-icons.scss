@@ -1,0 +1,53 @@
+@use "sass:list";
+@use "allergen-variables" as *;
+
+$allergen-font-path: "../fonts" !default;
+$allergen-font-plain: "allergen-icons-plain" !default;
+$allergen-font-circle: "allergen-icons-circle" !default;
+
+@mixin allergen-face($family, $file) {
+  @font-face {
+    font-family: $family;
+    src: url("#{$allergen-font-path}/#{$file}.woff2") format("woff2"),
+         url("#{$allergen-font-path}/#{$file}.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+}
+
+@include allergen-face($allergen-font-plain, "allergen-icons-plain");
+@include allergen-face($allergen-font-circle, "allergen-icons-circle");
+
+[class^="ai-"]::before,
+[class*=" ai-"]::before {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin allergen-icons($suffix, $family) {
+  $selectors: ();
+
+  @each $name in $allergens {
+    $selectors: list.append($selectors, ".ai-#{$name}#{$suffix}::before", comma);
+  }
+
+  #{$selectors} {
+    font-family: $family;
+  }
+}
+
+@include allergen-icons("", $allergen-font-plain);
+@include allergen-icons("-circle", $allergen-font-circle);
+
+@each $name in $allergens {
+  .ai-#{$name}::before,
+  .ai-#{$name}-circle::before {
+    content: allergen-glyph($name);
+  }
+}
