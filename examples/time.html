@@ -54,6 +54,12 @@
       background: var(--bs-primary);
       color: #fff;
     }
+    .time-part,
+    .time-colon {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      font-weight: 300;
+    }
     .time-part[aria-pressed="true"] {
       color: var(--bs-primary);
     }
@@ -65,8 +71,8 @@
     <div class="card" style="width: 20rem">
       <div class="card-body pb-2">
         <div class="text-uppercase small text-body-secondary">Tijd</div>
-        <div class="display-4 fw-normal mb-0">
-          <button class="btn btn-link time-part p-0 display-4 text-reset text-decoration-none" type="button" id="hour-part" aria-pressed="true">17</button><span class="text-body-secondary">:</span><button class="btn btn-link time-part p-0 display-4 text-reset text-decoration-none" type="button" id="minute-part" aria-pressed="false">00</button>
+        <div class="display-4 fw-normal mb-0 d-flex align-items-baseline">
+          <button class="btn btn-link time-part p-0 text-reset text-decoration-none" type="button" id="hour-part" aria-pressed="true">17</button><span class="time-colon text-body-secondary">:</span><button class="btn btn-link time-part p-0 text-reset text-decoration-none" type="button" id="minute-part" aria-pressed="false">00</button>
         </div>
         <input class="visually-hidden" type="time" id="time-input" value="17:00" tabindex="-1" aria-hidden="true">
       </div>
