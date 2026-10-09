@@ -35,7 +35,7 @@ npm install allergens
 ```
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/allergens@1.0.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/allergens@1.0.1">
 ```
 
 `allergens.css` is the same bundle without minification. Icons, colors, and form styles are combined in it.
