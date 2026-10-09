@@ -104,7 +104,8 @@
     }
 
     function handLength() {
-      return mode === "hour" && hour > 0 && hour < 12 ? "4.6rem" : "6.4rem";
+      const innerHour = hour === 0 || hour > 12;
+      return mode === "hour" && innerHour ? "4.6rem" : "6.4rem";
     }
 
     function moveHand() {
