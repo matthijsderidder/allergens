@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="nl" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tijd</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    .clock {
+      width: 16rem;
+      height: 16rem;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.18);
+    }
+    .clock-hand {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 2px;
+      height: var(--hand);
+      background: var(--bs-primary);
+      transform-origin: top center;
+      transform: translate(-50%, 0) rotate(var(--angle));
+      border-radius: 1px;
+    }
+    .clock-hand::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--bs-primary);
+      transform: translate(-50%, -50%);
+    }
+    .clock-number {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 2.25rem;
+      height: 2.25rem;
+      margin: -1.125rem;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      transform: rotate(var(--angle)) translateY(calc(var(--radius) * -1)) rotate(calc(var(--angle) * -1));
+    }
+    .clock-number[aria-pressed="true"] {
+      background: var(--bs-primary);
+      color: #fff;
+    }
+    .time-part[aria-pressed="true"] {
+      color: var(--bs-primary);
+    }
+  </style>
+</head>
+<body>
+  <div class="container p-4">
+    <h1 class="h3 mb-3">Tijd</h1>
+    <div class="card" style="width: 20rem">
+      <div class="card-body pb-2">
+        <div class="text-uppercase small text-body-secondary">Tijd</div>
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="display-4 fw-normal mb-0" id="time-display">
+            <button class="btn btn-link time-part p-0 display-4 text-reset text-decoration-none" type="button" id="hour-part" aria-pressed="true">17</button><span class="text-body-secondary">:</span><button class="btn btn-link time-part p-0 display-4 text-reset text-decoration-none" type="button" id="minute-part" aria-pressed="false">00</button>
+          </div>
+          <button class="btn btn-link text-body-secondary" type="button" id="edit-time" aria-label="Typ een tijd">
+            <i class="bi bi-pencil" aria-hidden="true"></i>
+          </button>
+        </div>
+        <input class="form-control mt-2 d-none" type="time" id="time-input" value="17:00">
+      </div>
+      <div class="clock position-relative mx-auto my-3" id="clock" role="group" aria-label="Kies een uur"></div>
+      <div class="card-footer bg-transparent border-0 d-flex justify-content-end gap-2 pt-0">
+        <button class="btn btn-link text-decoration-none" type="button" id="cancel">Cancel</button>
+        <button class="btn btn-link text-decoration-none" type="button" id="ok">OK</button>
+      </div>
+    </div>
+    <p class="form-text mt-3" id="result">Gekozen tijd: 17:00</p>
+  </div>
+  <script>
+    const clock = document.querySelector("#clock");
+    const hourPart = document.querySelector("#hour-part");
+    const minutePart = document.querySelector("#minute-part");
+    const timeInput = document.querySelector("#time-input");
+    const result = document.querySelector("#result");
+    let hour = 17;
+    let minute = 0;
+    let mode = "hour";
+
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+
+    function renderDisplay() {
+      hourPart.textContent = pad(hour);
+      minutePart.textContent = pad(minute);
+      timeInput.value = pad(hour) + ":" + pad(minute);
+      result.textContent = "Gekozen tijd: " + timeInput.value;
+    }
+
+    function renderClock() {
+      clock.replaceChildren();
+      clock.setAttribute("aria-label", mode === "hour" ? "Kies een uur" : "Kies de minuten");
+      const numbers = mode === "hour"
+        ? [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+        : [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
+      const selected = mode === "hour" ? hour : minute;
+      const handIndex = mode === "hour" ? hour % 12 : minute / 5;
+      const handRadius = mode === "hour" && hour > 0 && hour < 12 ? "4.6rem" : "6.4rem";
+      const hand = document.createElement("div");
+      hand.className = "clock-hand";
+      hand.style.setProperty("--angle", handIndex * 30 + "deg");
+      hand.style.setProperty("--hand", handRadius);
+      clock.append(hand);
+
+      numbers.forEach(function (value, index) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "clock-number";
+        button.textContent = mode === "hour" && value === 0 ? "00" : pad(value);
+        button.setAttribute("aria-pressed", value === selected ? "true" : "false");
+        const inner = mode === "hour" && index >= 12;
+        const angle = (mode === "hour" ? index % 12 : index) * 30;
+        button.style.setProperty("--angle", angle + "deg");
+        button.style.setProperty("--radius", inner ? "4.6rem" : "6.4rem");
+        button.addEventListener("click", function () {
+          if (mode === "hour") {
+            hour = value;
+            mode = "minute";
+            hourPart.setAttribute("aria-pressed", "false");
+            minutePart.setAttribute("aria-pressed", "true");
+          } else {
+            minute = value;
+          }
+          renderDisplay();
+          renderClock();
+        });
+        clock.append(button);
+      });
+    }
+
+    hourPart.addEventListener("click", function () {
+      mode = "hour";
+      hourPart.setAttribute("aria-pressed", "true");
+      minutePart.setAttribute("aria-pressed", "false");
+      renderClock();
+    });
+    minutePart.addEventListener("click", function () {
+      mode = "minute";
+      hourPart.setAttribute("aria-pressed", "false");
+      minutePart.setAttribute("aria-pressed", "true");
+      renderClock();
+    });
+    document.querySelector("#edit-time").addEventListener("click", function () {
+      timeInput.classList.toggle("d-none");
+      if (!timeInput.classList.contains("d-none")) timeInput.focus();
+    });
+    timeInput.addEventListener("change", function () {
+      const parts = timeInput.value.split(":");
+      hour = Number(parts[0]);
+      minute = Number(parts[1]);
+      renderDisplay();
+      renderClock();
+    });
+    document.querySelector("#ok").addEventListener("click", renderDisplay);
+    document.querySelector("#cancel").addEventListener("click", function () {
+      hour = 17;
+      minute = 0;
+      mode = "hour";
+      hourPart.setAttribute("aria-pressed", "true");
+      minutePart.setAttribute("aria-pressed", "false");
+      renderDisplay();
+      renderClock();
+    });
+
+    renderDisplay();
+    renderClock();
+  </script>
+</body>
+</html>
