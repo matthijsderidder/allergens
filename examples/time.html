@@ -88,7 +88,6 @@
     const timeInput = document.querySelector("#time-input");
     const hourPart = document.querySelector("#hour-part");
     const minutePart = document.querySelector("#minute-part");
-    const result = document.querySelector("#result");
     let hour = 17;
     let minute = 0;
     let mode = "hour";
@@ -123,7 +122,6 @@
       hourPart.setAttribute("aria-pressed", mode === "hour" ? "true" : "false");
       minutePart.setAttribute("aria-pressed", mode === "minute" ? "true" : "false");
       timeInput.value = pad(hour) + ":" + pad(minute);
-      result.textContent = "Gekozen tijd: " + timeInput.value;
     }
 
     function showMode(nextMode) {
