@@ -28,6 +28,16 @@ Laat het pad weg om het standaardbestand uit `package.json` te laden (`jsdelivr`
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthijsderidder/allergens@v1.0.0">
 ```
 
+Het pakket staat ook op [npm](https://www.npmjs.com/package/allergens). jsDelivr serveert die kopie ook:
+
+```bash
+npm install allergens
+```
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/allergens@1.0.0">
+```
+
 `allergens.css` is dezelfde bundel zonder minificatie. Iconen, kleuren en formulierstyles zitten er samen in.
 
 ### Pictogrammen
@@ -84,9 +94,9 @@ Klassen blijven Engels, ongeacht de taal van de pagina.
 
 De map `examples/` laat het gebruik zien. Elke pagina laadt `../dist/css/allergens.min.css` en Bootstrap 5.3.8. Engels is de standaard; de Nederlandse pagina heeft het achtervoegsel `.nl`.
 
-- `examples/forms.html`, `forms.nl.html` — checkboxes met de cirkelpictogrammen
-- `examples/allergens.html`, `allergens.nl.html` — kaarten en een accordion met de namen en omschrijvingen uit bijlage II
-- `examples/dish.html`, `dish.nl.html` — formulier voor een gerecht, met de allergeen-checkboxes
+- [examples/forms.html](examples/forms.html), [forms.nl.html](examples/forms.nl.html) — checkboxes met de cirkelpictogrammen
+- [examples/allergens.html](examples/allergens.html), [allergens.nl.html](examples/allergens.nl.html) — kaarten en een accordion met de namen en omschrijvingen uit bijlage II
+- [examples/dish.html](examples/dish.html), [dish.nl.html](examples/dish.nl.html) — formulier voor een gerecht, met de allergeen-checkboxes
 
 ## Indeling
 

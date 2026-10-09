@@ -28,6 +28,16 @@ Omit the path to load the default file from `package.json` (`jsdelivr`: `dist/cs
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthijsderidder/allergens@v1.0.0">
 ```
 
+The package is also published on [npm](https://www.npmjs.com/package/allergens). jsDelivr serves that copy as well:
+
+```bash
+npm install allergens
+```
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/allergens@1.0.0">
+```
+
 `allergens.css` is the same bundle without minification. Icons, colors, and form styles are combined in it.
 
 ### Icons
@@ -84,9 +94,9 @@ Class names stay English, whatever language the page is in.
 
 The `examples/` directory shows how to use the library. Each page loads `../dist/css/allergens.min.css` and Bootstrap 5.3.8. English is the default; the Dutch page uses the `.nl` suffix.
 
-- `examples/forms.html`, `forms.nl.html` — checkboxes with the circled icons
-- `examples/allergens.html`, `allergens.nl.html` — cards and an accordion with the names and descriptions from Annex II
-- `examples/dish.html`, `dish.nl.html` — menu dish form with the allergen checkboxes
+- [examples/forms.html](examples/forms.html), [forms.nl.html](examples/forms.nl.html) — checkboxes with the circled icons
+- [examples/allergens.html](examples/allergens.html), [allergens.nl.html](examples/allergens.nl.html) — cards and an accordion with the names and descriptions from Annex II
+- [examples/dish.html](examples/dish.html), [dish.nl.html](examples/dish.nl.html) — menu dish form with the allergen checkboxes
 
 ## Layout
 
