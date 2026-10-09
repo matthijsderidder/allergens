@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dish</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../dist/css/allergens.min.css">
+</head>
+<body>
+  <div class="container p-4">
+
+    <div class="row">
+      <div class="col">
+        <h1>Dish</h1>
+      </div>
+      <div class="col-auto text-end">
+        <strong>EN</strong>
+        <span class="text-body-secondary">·</span>
+        <a href="dish.nl.html" class="link-body-emphasis">NL</a>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="card">
+      <div class="card-header">Edit dish</div>
+      <form method="post">
+        <div class="card-body">
+
+          <div class="mb-3">
+            <label class="form-label" for="dish-name">Name</label>
+            <input class="form-control" type="text" id="dish-name" name="name" maxlength="80" required>
+            <div class="form-text">The name shown on the menu.</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="dish-description">Description</label>
+            <textarea class="form-control" id="dish-description" name="description" rows="4" maxlength="500"></textarea>
+            <div class="form-text">Short description of the dish, including the main ingredients.</div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label class="form-label" for="dish-price">Price</label>
+              <div class="input-group">
+                <span class="input-group-text">€</span>
+                <input class="form-control" type="number" id="dish-price" name="price" min="0" step="0.01" inputmode="decimal" required>
+              </div>
+              <div class="form-text">Menu price, with two decimal places.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label" for="dish-course">Course</label>
+              <select class="form-select" id="dish-course" name="course">
+                <option value="starter">Starter</option>
+                <option value="main" selected>Main</option>
+                <option value="side">Side</option>
+                <option value="dessert">Dessert</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label" for="dish-available">Availability</label>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="dish-available" name="available" checked>
+                <label class="form-check-label" for="dish-available">Available on the menu</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Allergens</label>
+            <div class="form-text mb-2">Allergens from Annex II that must be declared for this dish.</div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-2">
+              <div class="col">
+                <input class="form-check-input me-2 allergen-gluten" type="checkbox" id="dish-allergen-gluten" name="allergens" value="gluten">
+                <label class="form-check-label" for="dish-allergen-gluten">Cereals containing gluten</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-crustaceans" type="checkbox" id="dish-allergen-crustaceans" name="allergens" value="crustaceans">
+                <label class="form-check-label" for="dish-allergen-crustaceans">Crustaceans</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-eggs" type="checkbox" id="dish-allergen-eggs" name="allergens" value="eggs">
+                <label class="form-check-label" for="dish-allergen-eggs">Eggs</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-fish" type="checkbox" id="dish-allergen-fish" name="allergens" value="fish">
+                <label class="form-check-label" for="dish-allergen-fish">Fish</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-peanuts" type="checkbox" id="dish-allergen-peanuts" name="allergens" value="peanuts">
+                <label class="form-check-label" for="dish-allergen-peanuts">Peanuts</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-soybeans" type="checkbox" id="dish-allergen-soybeans" name="allergens" value="soybeans">
+                <label class="form-check-label" for="dish-allergen-soybeans">Soybeans</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-milk" type="checkbox" id="dish-allergen-milk" name="allergens" value="milk">
+                <label class="form-check-label" for="dish-allergen-milk">Milk</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-nuts" type="checkbox" id="dish-allergen-nuts" name="allergens" value="nuts">
+                <label class="form-check-label" for="dish-allergen-nuts">Nuts</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-celery" type="checkbox" id="dish-allergen-celery" name="allergens" value="celery">
+                <label class="form-check-label" for="dish-allergen-celery">Celery</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-mustard" type="checkbox" id="dish-allergen-mustard" name="allergens" value="mustard">
+                <label class="form-check-label" for="dish-allergen-mustard">Mustard</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-sesame" type="checkbox" id="dish-allergen-sesame" name="allergens" value="sesame">
+                <label class="form-check-label" for="dish-allergen-sesame">Sesame seeds</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-sulphites" type="checkbox" id="dish-allergen-sulphites" name="allergens" value="sulphites">
+                <label class="form-check-label" for="dish-allergen-sulphites">Sulphur dioxide and sulphites</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-lupin" type="checkbox" id="dish-allergen-lupin" name="allergens" value="lupin">
+                <label class="form-check-label" for="dish-allergen-lupin">Lupin</label>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-molluscs" type="checkbox" id="dish-allergen-molluscs" name="allergens" value="molluscs">
+                <label class="form-check-label" for="dish-allergen-molluscs">Molluscs</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-footer d-flex gap-2">
+          <button class="btn btn-primary" type="submit">Submit</button>
+          <button class="btn btn-outline-secondary" type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>

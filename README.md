@@ -86,6 +86,7 @@ The `examples/` directory shows how to use the library. Each page loads `../dist
 
 - `examples/forms.html`, `forms.nl.html` — checkboxes with the circled icons
 - `examples/allergens.html`, `allergens.nl.html` — cards and an accordion with the names and descriptions from Annex II
+- `examples/dish.html` — menu dish form with the allergen checkboxes
 
 ## Layout
 
