@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dish</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../dist/css/allergens.min.css">
 </head>
 <body>
@@ -69,63 +70,161 @@
 
           <div class="mb-3">
             <label class="form-label">Allergens</label>
-            <div class="form-text mb-2">Allergens from Annex II that must be declared for this dish.</div>
+            <div class="form-text mb-2">Allergens from Annex II that must be declared for this dish. The info button shows a short description.</div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-2">
               <div class="col">
                 <input class="form-check-input me-2 allergen-gluten" type="checkbox" id="dish-allergen-gluten" name="allergens" value="gluten">
                 <label class="form-check-label" for="dish-allergen-gluten">Cereals containing gluten</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-gluten-info" aria-expanded="false" aria-controls="dish-allergen-gluten-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About cereals containing gluten</span>
+                </button>
+                <div class="collapse" id="dish-allergen-gluten-info">
+                  <p class="form-text mb-0 mt-1">Wheat, including spelt and khorasan wheat, rye, barley, oats or their hybridised strains, and products thereof.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-crustaceans" type="checkbox" id="dish-allergen-crustaceans" name="allergens" value="crustaceans">
                 <label class="form-check-label" for="dish-allergen-crustaceans">Crustaceans</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-crustaceans-info" aria-expanded="false" aria-controls="dish-allergen-crustaceans-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About crustaceans</span>
+                </button>
+                <div class="collapse" id="dish-allergen-crustaceans-info">
+                  <p class="form-text mb-0 mt-1">Crustaceans and products thereof, such as prawns, crab and lobster.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-eggs" type="checkbox" id="dish-allergen-eggs" name="allergens" value="eggs">
                 <label class="form-check-label" for="dish-allergen-eggs">Eggs</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-eggs-info" aria-expanded="false" aria-controls="dish-allergen-eggs-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About eggs</span>
+                </button>
+                <div class="collapse" id="dish-allergen-eggs-info">
+                  <p class="form-text mb-0 mt-1">Eggs and products thereof.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-fish" type="checkbox" id="dish-allergen-fish" name="allergens" value="fish">
                 <label class="form-check-label" for="dish-allergen-fish">Fish</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-fish-info" aria-expanded="false" aria-controls="dish-allergen-fish-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About fish</span>
+                </button>
+                <div class="collapse" id="dish-allergen-fish-info">
+                  <p class="form-text mb-0 mt-1">Fish and products thereof.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-peanuts" type="checkbox" id="dish-allergen-peanuts" name="allergens" value="peanuts">
                 <label class="form-check-label" for="dish-allergen-peanuts">Peanuts</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-peanuts-info" aria-expanded="false" aria-controls="dish-allergen-peanuts-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About peanuts</span>
+                </button>
+                <div class="collapse" id="dish-allergen-peanuts-info">
+                  <p class="form-text mb-0 mt-1">Peanuts and products thereof.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-soybeans" type="checkbox" id="dish-allergen-soybeans" name="allergens" value="soybeans">
                 <label class="form-check-label" for="dish-allergen-soybeans">Soybeans</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-soybeans-info" aria-expanded="false" aria-controls="dish-allergen-soybeans-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About soybeans</span>
+                </button>
+                <div class="collapse" id="dish-allergen-soybeans-info">
+                  <p class="form-text mb-0 mt-1">Soybeans and products thereof.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-milk" type="checkbox" id="dish-allergen-milk" name="allergens" value="milk">
                 <label class="form-check-label" for="dish-allergen-milk">Milk</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-milk-info" aria-expanded="false" aria-controls="dish-allergen-milk-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About milk</span>
+                </button>
+                <div class="collapse" id="dish-allergen-milk-info">
+                  <p class="form-text mb-0 mt-1">Milk and products thereof, including lactose.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-nuts" type="checkbox" id="dish-allergen-nuts" name="allergens" value="nuts">
                 <label class="form-check-label" for="dish-allergen-nuts">Nuts</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-nuts-info" aria-expanded="false" aria-controls="dish-allergen-nuts-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About nuts</span>
+                </button>
+                <div class="collapse" id="dish-allergen-nuts-info">
+                  <p class="form-text mb-0 mt-1">Almonds, hazelnuts, walnuts, cashews, pecan nuts, Brazil nuts, pistachio nuts, macadamia or Queensland nuts, and products thereof.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-celery" type="checkbox" id="dish-allergen-celery" name="allergens" value="celery">
                 <label class="form-check-label" for="dish-allergen-celery">Celery</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-celery-info" aria-expanded="false" aria-controls="dish-allergen-celery-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About celery</span>
+                </button>
+                <div class="collapse" id="dish-allergen-celery-info">
+                  <p class="form-text mb-0 mt-1">Celery and products thereof.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-mustard" type="checkbox" id="dish-allergen-mustard" name="allergens" value="mustard">
                 <label class="form-check-label" for="dish-allergen-mustard">Mustard</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-mustard-info" aria-expanded="false" aria-controls="dish-allergen-mustard-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About mustard</span>
+                </button>
+                <div class="collapse" id="dish-allergen-mustard-info">
+                  <p class="form-text mb-0 mt-1">Mustard and products thereof.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-sesame" type="checkbox" id="dish-allergen-sesame" name="allergens" value="sesame">
                 <label class="form-check-label" for="dish-allergen-sesame">Sesame seeds</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-sesame-info" aria-expanded="false" aria-controls="dish-allergen-sesame-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About sesame seeds</span>
+                </button>
+                <div class="collapse" id="dish-allergen-sesame-info">
+                  <p class="form-text mb-0 mt-1">Sesame seeds and products thereof.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-sulphites" type="checkbox" id="dish-allergen-sulphites" name="allergens" value="sulphites">
                 <label class="form-check-label" for="dish-allergen-sulphites">Sulphur dioxide and sulphites</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-sulphites-info" aria-expanded="false" aria-controls="dish-allergen-sulphites-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About sulphur dioxide and sulphites</span>
+                </button>
+                <div class="collapse" id="dish-allergen-sulphites-info">
+                  <p class="form-text mb-0 mt-1">Sulphur dioxide and sulphites at concentrations of more than 10 mg/kg or 10 mg/litre.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-lupin" type="checkbox" id="dish-allergen-lupin" name="allergens" value="lupin">
                 <label class="form-check-label" for="dish-allergen-lupin">Lupin</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-lupin-info" aria-expanded="false" aria-controls="dish-allergen-lupin-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About lupin</span>
+                </button>
+                <div class="collapse" id="dish-allergen-lupin-info">
+                  <p class="form-text mb-0 mt-1">Lupin and products thereof.</p>
+                </div>
               </div>
               <div class="col">
                 <input class="form-check-input me-2 allergen-molluscs" type="checkbox" id="dish-allergen-molluscs" name="allergens" value="molluscs">
                 <label class="form-check-label" for="dish-allergen-molluscs">Molluscs</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-molluscs-info" aria-expanded="false" aria-controls="dish-allergen-molluscs-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">About molluscs</span>
+                </button>
+                <div class="collapse" id="dish-allergen-molluscs-info">
+                  <p class="form-text mb-0 mt-1">Molluscs and products thereof, such as mussels, oysters and squid.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -139,5 +238,6 @@
     </div>
 
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
