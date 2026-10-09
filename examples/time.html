@@ -16,13 +16,15 @@
     .clock-hand {
       position: absolute;
       left: 50%;
-      top: 50%;
+      bottom: 50%;
       width: 2px;
       height: var(--hand);
       background: var(--bs-primary);
-      transform-origin: top center;
-      transform: translate(-50%, 0) rotate(var(--angle));
+      transform-origin: center bottom;
+      transform: translateX(-50%) rotate(var(--angle));
+      transition: transform 0.2s ease, height 0.2s ease;
       border-radius: 1px;
+      pointer-events: none;
     }
     .clock-hand::before {
       content: "";
@@ -63,15 +65,7 @@
     <div class="card" style="width: 20rem">
       <div class="card-body pb-2">
         <div class="text-uppercase small text-body-secondary">Tijd</div>
-        <div class="d-flex align-items-center justify-content-between">
-          <div class="display-4 fw-normal mb-0" id="time-display">
-            <button class="btn btn-link time-part p-0 display-4 text-reset text-decoration-none" type="button" id="hour-part" aria-pressed="true">17</button><span class="text-body-secondary">:</span><button class="btn btn-link time-part p-0 display-4 text-reset text-decoration-none" type="button" id="minute-part" aria-pressed="false">00</button>
-          </div>
-          <button class="btn btn-link text-body-secondary" type="button" id="edit-time" aria-label="Typ een tijd">
-            <i class="bi bi-pencil" aria-hidden="true"></i>
-          </button>
-        </div>
-        <input class="form-control mt-2 d-none" type="time" id="time-input" value="17:00">
+        <input class="form-control-plaintext display-4 p-0" type="time" id="time-input" value="17:00" aria-label="Tijd">
       </div>
       <div class="clock position-relative mx-auto my-3" id="clock" role="group" aria-label="Kies een uur"></div>
       <div class="card-footer bg-transparent border-0 d-flex justify-content-end gap-2 pt-0">
@@ -83,8 +77,6 @@
   </div>
   <script>
     const clock = document.querySelector("#clock");
-    const hourPart = document.querySelector("#hour-part");
-    const minutePart = document.querySelector("#minute-part");
     const timeInput = document.querySelector("#time-input");
     const result = document.querySelector("#result");
     let hour = 17;
@@ -96,8 +88,6 @@
     }
 
     function renderDisplay() {
-      hourPart.textContent = pad(hour);
-      minutePart.textContent = pad(minute);
       timeInput.value = pad(hour) + ":" + pad(minute);
       result.textContent = "Gekozen tijd: " + timeInput.value;
     }
@@ -131,8 +121,6 @@
           if (mode === "hour") {
             hour = value;
             mode = "minute";
-            hourPart.setAttribute("aria-pressed", "false");
-            minutePart.setAttribute("aria-pressed", "true");
           } else {
             minute = value;
           }
@@ -143,23 +131,8 @@
       });
     }
 
-    hourPart.addEventListener("click", function () {
-      mode = "hour";
-      hourPart.setAttribute("aria-pressed", "true");
-      minutePart.setAttribute("aria-pressed", "false");
-      renderClock();
-    });
-    minutePart.addEventListener("click", function () {
-      mode = "minute";
-      hourPart.setAttribute("aria-pressed", "false");
-      minutePart.setAttribute("aria-pressed", "true");
-      renderClock();
-    });
-    document.querySelector("#edit-time").addEventListener("click", function () {
-      timeInput.classList.toggle("d-none");
-      if (!timeInput.classList.contains("d-none")) timeInput.focus();
-    });
-    timeInput.addEventListener("change", function () {
+    timeInput.addEventListener("input", function () {
+      if (!timeInput.value) return;
       const parts = timeInput.value.split(":");
       hour = Number(parts[0]);
       minute = Number(parts[1]);
@@ -171,8 +144,6 @@
       hour = 17;
       minute = 0;
       mode = "hour";
-      hourPart.setAttribute("aria-pressed", "true");
-      minutePart.setAttribute("aria-pressed", "false");
       renderDisplay();
       renderClock();
     });
