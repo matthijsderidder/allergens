@@ -22,7 +22,7 @@
       background: var(--bs-primary);
       transform-origin: center bottom;
       transform: translateX(-50%) rotate(var(--angle));
-      transition: transform 0.2s ease, height 0.2s ease;
+      transition: transform 0.35s ease, height 0.35s ease;
       border-radius: 1px;
       pointer-events: none;
     }
@@ -82,9 +82,29 @@
     let hour = 17;
     let minute = 0;
     let mode = "hour";
+    let handAngle = 150;
+    const hand = document.createElement("div");
+    hand.className = "clock-hand";
+    clock.append(hand);
 
     function pad(value) {
       return String(value).padStart(2, "0");
+    }
+
+    function targetAngle() {
+      return mode === "hour" ? (hour % 12) * 30 : minute * 6;
+    }
+
+    function handLength() {
+      return mode === "hour" && hour > 0 && hour < 12 ? "4.6rem" : "6.4rem";
+    }
+
+    function moveHand() {
+      const target = targetAngle();
+      const delta = ((target - handAngle) % 360 + 540) % 360 - 180;
+      handAngle += delta;
+      hand.style.setProperty("--angle", handAngle + "deg");
+      hand.style.setProperty("--hand", handLength());
     }
 
     function renderDisplay() {
@@ -93,19 +113,15 @@
     }
 
     function renderClock() {
-      clock.replaceChildren();
+      clock.querySelectorAll(".clock-number").forEach(function (node) {
+        node.remove();
+      });
       clock.setAttribute("aria-label", mode === "hour" ? "Kies een uur" : "Kies de minuten");
       const numbers = mode === "hour"
         ? [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
         : [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
       const selected = mode === "hour" ? hour : minute;
-      const handIndex = mode === "hour" ? hour % 12 : minute / 5;
-      const handRadius = mode === "hour" && hour > 0 && hour < 12 ? "4.6rem" : "6.4rem";
-      const hand = document.createElement("div");
-      hand.className = "clock-hand";
-      hand.style.setProperty("--angle", handIndex * 30 + "deg");
-      hand.style.setProperty("--hand", handRadius);
-      clock.append(hand);
+      moveHand();
 
       numbers.forEach(function (value, index) {
         const button = document.createElement("button");
