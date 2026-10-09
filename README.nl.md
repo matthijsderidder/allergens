@@ -86,7 +86,7 @@ De map `examples/` laat het gebruik zien. Elke pagina laadt `../dist/css/allerge
 
 - `examples/forms.html`, `forms.nl.html` — checkboxes met de cirkelpictogrammen
 - `examples/allergens.html`, `allergens.nl.html` — kaarten en een accordion met de namen en omschrijvingen uit bijlage II
-- `examples/dish.html` — formulier voor een gerecht, met de allergeen-checkboxes
+- `examples/dish.html`, `dish.nl.html` — formulier voor een gerecht, met de allergeen-checkboxes
 
 ## Indeling
 

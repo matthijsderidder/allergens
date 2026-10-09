@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="nl" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerecht</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../dist/css/allergens.min.css">
+</head>
+<body>
+  <div class="container p-4">
+
+    <div class="row">
+      <div class="col">
+        <h1>Gerecht</h1>
+      </div>
+      <div class="col-auto text-end">
+        <a href="dish.html" class="link-body-emphasis">EN</a>
+        <span class="text-body-secondary">·</span>
+        <strong>NL</strong>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="card">
+      <div class="card-header">Gerecht bewerken</div>
+      <form method="post">
+        <div class="card-body">
+
+          <div class="mb-3">
+            <label class="form-label" for="dish-name">Naam</label>
+            <input class="form-control" type="text" id="dish-name" name="name" maxlength="80" required>
+            <div class="form-text">De naam op de menukaart.</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="dish-description">Beschrijving</label>
+            <textarea class="form-control" id="dish-description" name="description" rows="4" maxlength="500"></textarea>
+            <div class="form-text">Korte beschrijving van het gerecht, inclusief de hoofdingrediënten.</div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label class="form-label" for="dish-price">Prijs</label>
+              <div class="input-group">
+                <span class="input-group-text">€</span>
+                <input class="form-control" type="number" id="dish-price" name="price" min="0" step="0.01" inputmode="decimal" required>
+              </div>
+              <div class="form-text">Menuprijs, met twee decimalen.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label" for="dish-course">Gang</label>
+              <select class="form-select" id="dish-course" name="course">
+                <option value="starter">Voorgerecht</option>
+                <option value="main" selected>Hoofdgerecht</option>
+                <option value="side">Bijgerecht</option>
+                <option value="dessert">Nagerecht</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label" for="dish-available">Beschikbaarheid</label>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="dish-available" name="available" checked>
+                <label class="form-check-label" for="dish-available">Beschikbaar op de kaart</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Allergenen</label>
+            <div class="form-text mb-2">Allergenen uit bijlage II die voor dit gerecht vermeld moeten worden. De infoknop toont een korte omschrijving.</div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-2">
+              <div class="col">
+                <input class="form-check-input me-2 allergen-gluten" type="checkbox" id="dish-allergen-gluten" name="allergens" value="gluten">
+                <label class="form-check-label" for="dish-allergen-gluten">Gluten</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-gluten-info" aria-expanded="false" aria-controls="dish-allergen-gluten-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over gluten</span>
+                </button>
+                <div class="collapse" id="dish-allergen-gluten-info">
+                  <p class="form-text mb-0 mt-1">Tarwe, waaronder spelt en khorasantarwe, rogge, gerst, haver of de kruisingen daarvan, en producten op basis daarvan.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-crustaceans" type="checkbox" id="dish-allergen-crustaceans" name="allergens" value="crustaceans">
+                <label class="form-check-label" for="dish-allergen-crustaceans">Schaaldieren</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-crustaceans-info" aria-expanded="false" aria-controls="dish-allergen-crustaceans-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over schaaldieren</span>
+                </button>
+                <div class="collapse" id="dish-allergen-crustaceans-info">
+                  <p class="form-text mb-0 mt-1">Schaaldieren en producten op basis daarvan, zoals garnalen, krab en kreeft.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-eggs" type="checkbox" id="dish-allergen-eggs" name="allergens" value="eggs">
+                <label class="form-check-label" for="dish-allergen-eggs">Eieren</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-eggs-info" aria-expanded="false" aria-controls="dish-allergen-eggs-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over eieren</span>
+                </button>
+                <div class="collapse" id="dish-allergen-eggs-info">
+                  <p class="form-text mb-0 mt-1">Eieren en producten op basis daarvan.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-fish" type="checkbox" id="dish-allergen-fish" name="allergens" value="fish">
+                <label class="form-check-label" for="dish-allergen-fish">Vis</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-fish-info" aria-expanded="false" aria-controls="dish-allergen-fish-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over vis</span>
+                </button>
+                <div class="collapse" id="dish-allergen-fish-info">
+                  <p class="form-text mb-0 mt-1">Vis en producten op basis daarvan.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-peanuts" type="checkbox" id="dish-allergen-peanuts" name="allergens" value="peanuts">
+                <label class="form-check-label" for="dish-allergen-peanuts">Pinda's</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-peanuts-info" aria-expanded="false" aria-controls="dish-allergen-peanuts-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over pinda's</span>
+                </button>
+                <div class="collapse" id="dish-allergen-peanuts-info">
+                  <p class="form-text mb-0 mt-1">Pinda's en producten op basis daarvan.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-soybeans" type="checkbox" id="dish-allergen-soybeans" name="allergens" value="soybeans">
+                <label class="form-check-label" for="dish-allergen-soybeans">Soja</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-soybeans-info" aria-expanded="false" aria-controls="dish-allergen-soybeans-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over soja</span>
+                </button>
+                <div class="collapse" id="dish-allergen-soybeans-info">
+                  <p class="form-text mb-0 mt-1">Soja en producten op basis daarvan.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-milk" type="checkbox" id="dish-allergen-milk" name="allergens" value="milk">
+                <label class="form-check-label" for="dish-allergen-milk">Melk</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-milk-info" aria-expanded="false" aria-controls="dish-allergen-milk-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over melk</span>
+                </button>
+                <div class="collapse" id="dish-allergen-milk-info">
+                  <p class="form-text mb-0 mt-1">Melk en producten op basis daarvan, inclusief lactose.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-nuts" type="checkbox" id="dish-allergen-nuts" name="allergens" value="nuts">
+                <label class="form-check-label" for="dish-allergen-nuts">Noten</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-nuts-info" aria-expanded="false" aria-controls="dish-allergen-nuts-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over noten</span>
+                </button>
+                <div class="collapse" id="dish-allergen-nuts-info">
+                  <p class="form-text mb-0 mt-1">Amandelen, hazelnoten, walnoten, cashewnoten, pecannoten, paranoten, pistachenoten, macadamianoten of Queenslandnoten, en producten op basis daarvan.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-celery" type="checkbox" id="dish-allergen-celery" name="allergens" value="celery">
+                <label class="form-check-label" for="dish-allergen-celery">Selderij</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-celery-info" aria-expanded="false" aria-controls="dish-allergen-celery-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over selderij</span>
+                </button>
+                <div class="collapse" id="dish-allergen-celery-info">
+                  <p class="form-text mb-0 mt-1">Selderij en producten op basis daarvan.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-mustard" type="checkbox" id="dish-allergen-mustard" name="allergens" value="mustard">
+                <label class="form-check-label" for="dish-allergen-mustard">Mosterd</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-mustard-info" aria-expanded="false" aria-controls="dish-allergen-mustard-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over mosterd</span>
+                </button>
+                <div class="collapse" id="dish-allergen-mustard-info">
+                  <p class="form-text mb-0 mt-1">Mosterd en producten op basis daarvan.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-sesame" type="checkbox" id="dish-allergen-sesame" name="allergens" value="sesame">
+                <label class="form-check-label" for="dish-allergen-sesame">Sesamzaden</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-sesame-info" aria-expanded="false" aria-controls="dish-allergen-sesame-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over sesamzaden</span>
+                </button>
+                <div class="collapse" id="dish-allergen-sesame-info">
+                  <p class="form-text mb-0 mt-1">Sesamzaad en producten op basis daarvan.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-sulphites" type="checkbox" id="dish-allergen-sulphites" name="allergens" value="sulphites">
+                <label class="form-check-label" for="dish-allergen-sulphites">Zwavel</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-sulphites-info" aria-expanded="false" aria-controls="dish-allergen-sulphites-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over zwavel</span>
+                </button>
+                <div class="collapse" id="dish-allergen-sulphites-info">
+                  <p class="form-text mb-0 mt-1">Zwaveldioxide en sulfieten in een concentratie van meer dan 10 mg/kg of 10 mg/liter.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-lupin" type="checkbox" id="dish-allergen-lupin" name="allergens" value="lupin">
+                <label class="form-check-label" for="dish-allergen-lupin">Lupine</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-lupin-info" aria-expanded="false" aria-controls="dish-allergen-lupin-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over lupine</span>
+                </button>
+                <div class="collapse" id="dish-allergen-lupin-info">
+                  <p class="form-text mb-0 mt-1">Lupine en producten op basis daarvan.</p>
+                </div>
+              </div>
+              <div class="col">
+                <input class="form-check-input me-2 allergen-molluscs" type="checkbox" id="dish-allergen-molluscs" name="allergens" value="molluscs">
+                <label class="form-check-label" for="dish-allergen-molluscs">Weekdieren</label>
+                <button class="btn btn-link btn-sm p-0 ms-1 align-baseline text-body-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#dish-allergen-molluscs-info" aria-expanded="false" aria-controls="dish-allergen-molluscs-info">
+                  <i class="bi bi-info-circle" aria-hidden="true"></i>
+                  <span class="visually-hidden">Over weekdieren</span>
+                </button>
+                <div class="collapse" id="dish-allergen-molluscs-info">
+                  <p class="form-text mb-0 mt-1">Weekdieren en producten op basis daarvan, zoals mosselen, oesters en inktvis.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-footer d-flex gap-2">
+          <button class="btn btn-primary" type="submit">Opslaan</button>
+          <button class="btn btn-outline-secondary" type="reset">Wissen</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
