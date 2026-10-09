@@ -19,13 +19,13 @@ Include the bundled stylesheet. Font files are loaded relatively from `dist/font
 jsDelivr can serve the same files from the public GitHub repository. Relative font URLs are rewritten by the CDN.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthijsderidder/allergens@v1.0.0/dist/css/allergens.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthijsderidder/allergens@v1.0.1/dist/css/allergens.min.css">
 ```
 
 Omit the path to load the default file from `package.json` (`jsdelivr`: `dist/css/allergens.min.css`):
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthijsderidder/allergens@v1.0.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthijsderidder/allergens@v1.0.1">
 ```
 
 The package is also published on [npm](https://www.npmjs.com/package/allergens). jsDelivr serves that copy as well:

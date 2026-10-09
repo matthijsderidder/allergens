@@ -19,13 +19,13 @@ Neem het gebundelde stylesheet op. De fontbestanden worden relatief geladen vanu
 jsDelivr kan dezelfde bestanden serveren vanuit de publieke GitHub-repository. Relatieve font-URL's worden door de CDN herschreven.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthijsderidder/allergens@v1.0.0/dist/css/allergens.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthijsderidder/allergens@v1.0.1/dist/css/allergens.min.css">
 ```
 
 Laat het pad weg om het standaardbestand uit `package.json` te laden (`jsdelivr`: `dist/css/allergens.min.css`):
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthijsderidder/allergens@v1.0.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matthijsderidder/allergens@v1.0.1">
 ```
 
 Het pakket staat ook op [npm](https://www.npmjs.com/package/allergens). jsDelivr serveert die kopie ook:
