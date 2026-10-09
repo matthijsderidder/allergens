@@ -145,7 +145,7 @@
         const button = document.createElement("button");
         button.type = "button";
         button.className = "clock-number";
-        button.textContent = mode === "hour" && value === 0 ? "00" : pad(value);
+        button.textContent = String(value);
         button.setAttribute("aria-pressed", value === selected ? "true" : "false");
         const inner = mode === "hour" && index >= 12;
         const angle = (mode === "hour" ? index % 12 : index) * 30;
