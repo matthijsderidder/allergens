@@ -113,6 +113,24 @@ examples/             HTML that points at dist/css
 
 `src/scss/allergens.scss` is the entrypoint and loads variables, icons, colors, and form styles. Font URLs in the CSS are relative (`../fonts/`), resolved from `dist/css/`.
 
+## Changelog
+
+### Unreleased
+
+- Dish examples use a Bootstrap gutter of 3 between the allergen columns.
+
+### 1.0.1
+
+- Added the dish form example in English and Dutch, with Annex II descriptions behind an info button.
+- Shortened the dish labels for gluten, sesame, and sulphites. The Dutch labels use Sesamzaden and Zwavel.
+- Documented the npm package and linked the examples.
+
+### 1.0.0
+
+- Initial release: 14 Annex II allergen icons as plain and circled webfonts, with colors and checkbox styles.
+- Published CSS, minified CSS, and the font files.
+- Added the form and allergen examples in English and Dutch.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

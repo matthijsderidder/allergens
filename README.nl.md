@@ -113,6 +113,24 @@ examples/             HTML die naar dist/css verwijst
 
 `src/scss/allergens.scss` is het entrypoint en importeert variabelen, iconen, kleuren en formulierstyles. Font-URL's in de CSS zijn relatief (`../fonts/`), gerekend vanaf `dist/css/`.
 
+## Versiegeschiedenis
+
+### Nog niet uitgebracht
+
+- De gerechtvoorbeelden gebruiken een Bootstrap-gutter van 3 tussen de allergeenkolommen.
+
+### 1.0.1
+
+- Voorbeeld voor een gerecht toegevoegd, in het Engels en Nederlands, met bijlage II-omschrijvingen achter een infoknop.
+- Kortere labels in het gerechtformulier voor gluten, sesam en sulfieten. Nederlands gebruikt Sesamzaden en Zwavel.
+- npm-pakket gedocumenteerd en de voorbeelden gelinkt.
+
+### 1.0.0
+
+- Eerste release: 14 allergenen uit bijlage II als vlak en cirkel-webfont, met kleuren en checkboxstijlen.
+- CSS, minified CSS en de fontbestanden gepubliceerd.
+- Formulier- en allergeenvoorbeelden toegevoegd, in het Engels en Nederlands.
+
 ## Licentie
 
 MIT. Zie [LICENSE](LICENSE).
